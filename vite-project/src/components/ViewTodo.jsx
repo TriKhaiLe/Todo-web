@@ -22,13 +22,13 @@ export default function ViewTodo() {
 
   return (
     <div className="p-8 flex flex-col items-center">
-      <button onClick={() => setShowModal(true)} className="bg-blue-500 text-white px-4 py-2 mb-4">Add More Todo</button>
       {showModal && <AddTodoModal setShowModal={setShowModal} setTodos={setTodos} />}
-      <table className="w-full text-left border">
+      
+      <table className="w-full max-w-4xl text-left border">
         <thead>
           <tr>
-            <th className="border px-4 py-2">Title</th>
-            <th className="border px-4 py-2">Completed</th>
+            <th className="border px-4 py-2 w-3/4">Title</th>
+            <th className="border px-4 py-2 text-center">Completed</th>
             <th className="border px-4 py-2">Delete</th>
           </tr>
         </thead>
@@ -36,16 +36,23 @@ export default function ViewTodo() {
           {todos.map(todo => (
             <tr key={todo.id}>
               <td className="border px-4 py-2">{todo.todo}</td>
-              <td className="border px-4 py-2">
+              <td className="border px-4 py-2 text-center">
                 <input type="checkbox" checked={todo.completed} onChange={() => toggleComplete(todo.id)} />
               </td>
-              <td className="border px-4 py-2">
+              <td className="border px-4 py-2 text-center">
                 <TrashIcon className="w-5 h-5 text-red-500 cursor-pointer" onClick={() => handleDelete(todo.id)} />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      <button 
+        onClick={() => setShowModal(true)} 
+        className="bg-blue-500 text-white px-4 py-2 fixed bottom-4 right-4"
+      >
+        Add More Todo
+      </button>
     </div>
   );
 }
