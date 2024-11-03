@@ -3,7 +3,7 @@ import { FaHome, FaFolder } from 'react-icons/fa';
 
 export default function Navbar({ setView }) {
   return (
-    <div className="w-[10%] h-screen bg-gray-800 text-white flex flex-col items-center py-4">
+    <div className="w-[10%] h-screen bg-gray-800 text-white flex flex-col items-center justify-center py-4">
       <button
         onClick={() => setView('home')}
         className="text-cyan-400 mb-6 flex flex-col items-center"
