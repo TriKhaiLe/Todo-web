@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="flex">
       <Navbar setView={setView} />
-      <div className="w-3/4 p-8">
+      <div className="w-full p-8">
         {view === 'home' ? <Home /> : <ViewTodo />}
       </div>
     </div>
