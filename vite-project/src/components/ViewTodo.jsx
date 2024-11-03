@@ -40,7 +40,11 @@ export default function ViewTodo() {
                 <input type="checkbox" checked={todo.completed} onChange={() => toggleComplete(todo.id)} />
               </td>
               <td className="border px-4 py-2 text-center">
-                <TrashIcon className="w-5 h-5 text-red-500 cursor-pointer" onClick={() => handleDelete(todo.id)} />
+                <TrashIcon 
+                  style={{ width: '20px', height: '20px' }}
+                  className="text-red-500 cursor-pointer inline-flex"
+                  onClick={() => handleDelete(todo.id)}
+                />
               </td>
             </tr>
           ))}
